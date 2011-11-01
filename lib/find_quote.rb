@@ -9,7 +9,7 @@
 #
 def find_quote(*args)
   args.flatten!
-  filename = "#{args[0]}"
+  filename = args[0]
   line = args[1]
   if File.exists?(filename)
     quote = File.readlines(filename).map {|quote| quote.strip }
