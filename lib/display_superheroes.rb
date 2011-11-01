@@ -8,3 +8,9 @@
 # @see http://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Method_Calls
 # @see Programing Ruby, Chapter 6 
 #
+def display_superheroes(*superheroes)
+  superheroes.flatten!
+  superheroes.uniq.each do |hero|
+    puts "#{hero}"
+  end
+end

@@ -20,7 +20,7 @@ describe "#url_builder" do
     
   end
   
-  context "when given multiple parametesr" do
+  context "when given multiple parameters" do
     
     it "should append each parameter with an &" do
       url_builder(url,:results => '20',:search => 'burgers').should == "#{url}?results=20&search=burgers"
