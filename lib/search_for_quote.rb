@@ -7,6 +7,7 @@
 # @see http://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Method_Calls
 # @see Programing Ruby, Chapter 6 
 #
+<<<<<<< HEAD
 def search_for_quote(args)
   file, start_with, includes, end_with = nil
   if args.has_key?(:file)
@@ -38,3 +39,12 @@ def search_for_quote(args)
     return []
   end
 end
+=======
+
+def search_for_quote(params = {})
+  all_quotes(params.delete(:file)).map do |quote|
+    params.empty? ? quote : params.map {|key,value| quote if quote.send("#{key}?",value) }.uniq
+  end.flatten.compact
+end
+
+>>>>>>> 0b13847469d9e9eca826e970b910af111e1b5391

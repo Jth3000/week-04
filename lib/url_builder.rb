@@ -8,6 +8,7 @@
 # @see http://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Method_Calls
 # @see Programing Ruby, Chapter 6 
 #
+<<<<<<< HEAD
 def url_builder(*args)
   args.flatten!
   url = args[0]
@@ -39,3 +40,13 @@ def url_builder(*args)
   return url
 end
     
+=======
+
+def url_builder(url,options = {})
+  options = { :results => 10 }.merge(options)
+  
+  param_string = options.reject{|k,v| v == nil }.map {|key,value| "#{key}=#{value}" }.join("&")
+  
+  "#{url}?#{param_string}"
+end
+>>>>>>> 0b13847469d9e9eca826e970b910af111e1b5391
